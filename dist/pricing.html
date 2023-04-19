@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socido</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=DM+Sans:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-dm text-gray-900">
+    <!-- header -->
+    <header class="relative z-20">
+        <div class="container relative bg-white">
+            <div class="flex justify-between items-center py-6 lg:justify-start">
+                <a class="mr-8" href="index.html"><img class="h-8 sm:h-10 w-auto" src="/assets/logo2.svg" alt="Socido"></a>
+                <div class="lg:hidden">
+                    <button id="toggle-mobile" class="inline-flex items-center justify-center"><i class="fas fa-bars text-xl text-purple-900 hover:text-gray-900"></i></button>
+                </div>
+                <nav class="hidden lg:flex space-x-10">
+                    <div class="relative">
+                        <button class="inline-flex items-center font-medium hover:text-purple-900" id="toggle">
+                            <span>
+                                Funkcje
+                            </span>
+                            <i class="fas fa-chevron-down ml-1"></i>
+                        </button>
+                        <div class="hidden absolute z-20 mt-3 px-2 w-screen max-w-md sm:px-0 lg:left-1/2 transform lg:-translate-x-1/2" id="menu">
+                            <div class="rounded-lg shadow-lg ring-1 ring-gray-900 ring-opacity-5 overflow-hidden">
+                                <ul class="relative bg-white px-5 py-6 sm:p-8">
+                                    <li class="mb-2"><a href="#" class="p-3 flex items-center hover:bg-gray-50">
+                                        <i class="far fa-chart-bar text-2xl text-purple-900"></i>
+                                        <div class="ml-4">
+                                            <p class="font-medium">Analityka</p>
+                                            <p class="mt-1 text-sm text-gray-500">Lorem ipsum lorem lorem lorem.</p>
+                                        </div>
+                                    </a></li>
+                                    <li class="mb-2"><a href="#" class="p-3 flex items-center hover:bg-gray-50">
+                                        <i class="fas fa-tasks text-2xl text-purple-900"></i>
+                                        <div class="ml-4">
+                                            <p class="font-medium">Zarządzanie</p>
+                                            <p class="mt-1 text-sm text-gray-500">Lorem ipsum lorem lorem lorem ipsum lorem.</p>
+                                        </div>
+                                    </a></li>
+                                    <li class="mb-2"><a href="#" class="p-3 flex items-center hover:bg-gray-50">
+                                        <i class="fas fa-shield-alt text-2xl text-purple-900"></i>
+                                        <div class="ml-4">
+                                            <p class="font-medium">Bezpieczeństwo</p>
+                                            <p class="mt-1 text-sm text-gray-500">Lorem ipsum lorem lorem lorem.</p>
+                                        </div>
+                                    </a></li>
+                                    <li class="mb-2"><a href="#" class="p-3 flex items-center hover:bg-gray-50">
+                                        <i class="fas fa-th-large text-2xl text-purple-900"></i>
+                                        <div class="ml-4">
+                                            <p class="font-medium">Integracje</p>
+                                            <p class="mt-1 text-sm text-gray-500">Lorem ipsum lorem lorem lorem ipsum dolores dol tesd.</p>
+                                        </div>
+                                    </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="font-medium hover:text-purple-900">Dla Twojej firmy</a>
+                    <a href="#" class="font-medium hover:text-purple-900">Cennik</a>
+                    <a href="#" class="font-medium hover:text-purple-900">O nas</a>
+
+                </nav>
+
+                <div class="hidden lg:flex lg:flex-1 items-center justify-end">
+                    <a href="#" class="font-medium hover:text-purple-900">Zaloguj się</a>
+                    <a href="#" class="ml-8 px-4 py-2 rounded shadow-sm font-medium text-white bg-purple-900 hover:bg-gray-900">Zarejestruj się</a>
+
+                </div>
+            </div>
+            
+            <div id="menu-mobile" class="hidden absolute top-0 p-2 z-20 inset-x-0">
+                <div class="rounded-lg shadow-lg ring-1 ring-gray-900 ring-opacity-5 bg-white divide-y-2 divide-gray-50 w-full">
+                    <div class="p-5">
+                        <div class="flex items-center justify-between">
+                            <a href="index.html"><img src="/assets/logo2.svg" alt="Socido"></a>
+                            <button id="hide-menu" class="inline-flex items-center text-purple-900 hover:text-gray-900">
+                                <i class="fas fa-times text-2xl"></i>
+                            </button>
+                        </div>
+
+                        <div class="mt-6">
+                            <nav>
+                            <ul>
+                                <li>
+                                    <a href="#" class="py-3 flex items-center hover:bg-gray-50">
+                                        <i class="far fa-chart-bar text-2xl"></i>
+                                        <span class="ml-3 text-base font-medium">Analityka</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="py-3 flex items-center hover:bg-gray-50">
+                                        <i class="fas fa-tasks text-2xl"></i>
+                                        <span class="ml-3 text-base font-medium">Zarządzanie</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="py-3 flex items-center hover:bg-gray-50">
+                                        <i class="fas fa-shield-alt text-2xl"></i>
+                                        <span class="ml-3 text-base font-medium">Bezpieczeństwo</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="py-3 flex items-center hover:bg-gray-50">
+                                        <i class="fas fa-th-large text-2xl"></i>
+                                        <span class="ml-3 text-base font-medium">Integracje</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="py-6 px-5 space-y-6">
+                        <div class="grid grid-cols-2 gap-y-4 gap-x-8">
+                            <a href="#" class="font-medium hover:text-gray-600">Funkcje</a>
+                            <a href="#" class="font-medium hover:text-gray-600">Dla Twojej firmy</a>
+                            <a href="#" class="font-medium hover:text-gray-600">Cennik</a>
+                            <a href="#" class="font-medium hover:text-gray-600">O nas</a>
+                        </div>
+                        <div class="">
+                            <a href="#" class="w-full inline-flex items-center justify-center px-4 py-2 rounded shadow-sm font-medium text-white bg-purple-900 hover:bg-gray-900">Zarejestruj się</a>
+                            <a href="#" class="mt-2 w-full inline-flex items-center justify-center px-4 py-2 rounded font-medium hover:text-gray-600">Zaloguj się</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+  
+
+  <!-- section pricing plan -->
+  <section class="pt-10 md:pt-16 lg:pt-20 overflow-x-hidden md:overflow-x-visible">
+    <div class="container relative">
+        <img src="assets/Vector@2x.svg" class="absolute -right-24 md:-right-32 -top-24 md:-top-32">
+        <div class="flex flex-col items-center text-center z-10" data-aos="fade-in">
+            <h1 class="text-3xl md:text-5xl font-bold tracking-light">
+                Prosta, przejrzysta wycena
+            </h1>
+            <p class="w-full md:w-7/12 mt-3 sm:mt-5 text-lg sm:mx-auto md:text-xl">
+                Curabitur auctor, leo ut commodo rutrum, ex turpis rutrum magna, sed euismod leo nulla consectetur libero. Mauris id sollicitudin eros. Proin tincidunt odio vitae lacus egestas posuere. Sed pretium lorem lectus, id pharetra tortor placerat ac. Proin sed convallis erat.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-10 gap-y-10 xl:gap-y-0 mt-12 md:mt-16 lg:mt-24 border-b border-gray-300 pb-12 lg:pb-20 px-0 xl:px-12 2xl:px-20">
+            <div class="flex flex-col border border-gray-600 px-8 py-12 text-center bg-white z-10">
+                <h4 class="font-architect">Standard</h4>
+                <p class="text-base mt-4">
+                    Curabitur auctor, leo ut commodo rutrum, ex turpis rutrum magna, sed euismod leo nulla consectetur libero. Mauris id sollicitudin eros. Proin tincidunt odio vitae.
+                </p>
+                <div class="text-6xl font-bold py-8 border-b border-gray-300 flex-grow">49 zł
+                    <span class="text-3xl font-normal">/mies</span>
+                </div>
+                <ul class="my-6 space-y-5 flex-grow">
+                    <li class="flex items-center">
+                        <img src="assets/icons/checkmark.svg">
+                        <span class="ml-3 text-base break-words">12 miesięcy archiwum danych</span>
+                    </li> 
+                    <li class="flex items-center">
+                        <img src="assets/icons/checkmark.svg">
+                        <span class="ml-3 text-base break-words">Moderacja reklam na Facebooku</span>
+                    </li> 
+                    <li class="flex items-center">
+                        <img src="assets/icons/checkmark.svg">
+                        <span class="ml-3 text-base break-words">Social media inbox</span>
+                    </li> 
+                    <li class="flex items-center">
+                        <img src="assets/icons/checkmark.svg">
+                        <span class="ml-3 text-base break-words">Analityka</span>
+                    </li> 
+                </ul>
+                <a hreg="#" class="px-6 py-4 rounded-sm shadow-sm font-medium border border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white">
+                    Wypróbuj za darmo
+                </a>
+            </div>
+            <div class="flex flex-col border-4 border-purple-900 px-8 py-12 text-center bg-white z-10 relative">
+                <span class="absolute -top-6 left-1/2 transform -translate-x-1/2 tracking-wider bg-teal-500 text-white rounded-full px-4 py-2">Popularny</span>
+                <h4 class="font-architect">Premium</h4>
+                <p class="text-base mt-4">
+                    Curabitur auctor, leo ut commodo rutrum, ex turpis rutrum magna, sed euismod leo nulla consectetur libero. Mauris id sollicitudin eros. Proin tincidunt odio vitae.
+                </p>
+                <div class="text-6xl font-bold py-8 border-b border-gray-300 flex-grow text-pruple-900">79 zł
+                    <span class="text-3xl font-normal">/mies</span>
+                </div>
+                <ul class="my-6 space-y-5 flex-grow">
+                    <li class="flex items-center">
+                        <img src="assets/icons/checkmark.svg">
+                        <span class="ml-3 text-base break-words">12 miesięcy archiwum danych</span>
+                    </li> 
+                    <li class="flex items-center">
+                        <img src="assets/icons/checkmark.svg">
+                        <span class="ml-3 text-base break-words">Moderacja reklam na Facebooku</span>
+                    </li> 
+                    <li class="flex items-center">
+                        <img src="assets/icons/checkmark.svg">
+                        <span class="ml-3 text-base break-words">Social media inbox</span>
+                    </li> 
+                    <li class="flex items-center">
+                        <img src="assets/icons/checkmark.svg">
+                        <span class="ml-3 text-base break-words">Analityka</span>
+                    </li> 
+                </ul>
+                <a hreg="#" class="px-6 py-4 rounded-sm shadow-sm font-medium border bg-purple-900 text-white hover:bg-white hover:text-purple-900">
+                    Wypróbuj za darmo
+                </a>
+            </div>
+            <div class="flex flex-col border border-gray-600 px-8 py-12 text-center bg-white z-10">
+                <h4 class="font-architect">Premium plus</h4>
+                <p class="text-base mt-4">
+                    Curabitur auctor, leo ut commodo rutrum, ex turpis rutrum magna, sed euismod leo nulla consectetur libero. Mauris id sollicitudin eros. Proin tincidunt odio vitae.
+                </p>
+                <div class="text-6xl font-bold py-8 border-b border-gray-300 flex-grow">149 zł
+                    <span class="text-3xl font-normal">/mies</span>
+                </div>
+                <ul class="my-6 space-y-5 flex-grow">
+                    <li class="flex items-center">
+                        <img src="assets/icons/checkmark.svg">
+                        <span class="ml-3 text-base break-words">12 miesięcy archiwum danych</span>
+                    </li> 
+                    <li class="flex items-center">
+                        <img src="assets/icons/checkmark.svg">
+                        <span class="ml-3 text-base break-words">Moderacja reklam na Facebooku</span>
+                    </li> 
+                    <li class="flex items-center">
+                        <img src="assets/icons/checkmark.svg">
+                        <span class="ml-3 text-base break-words">Social media inbox</span>
+                    </li> 
+                    <li class="flex items-center">
+                        <img src="assets/icons/checkmark.svg">
+                        <span class="ml-3 text-base break-words">Analityka</span>
+                    </li> 
+                </ul>
+                <a hreg="#" class="px-6 py-4 rounded-sm shadow-sm font-medium border border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white">
+                    Wypróbuj za darmo
+                </a>
+            </div>
+        </div>
+        <img src="assets/Vector3.png" class="hidden md:block h-full absolute md:top-0 xl:-bottom-10 2xl:-left-32">
+    </div>
+</section>
+
+<!-- extra section -->
+<section>
+    <div class="container">
+        <div class="flex flex-col lg:flex-row items-center justify-between border-b border-gray-300 py-6 lg:py-10">
+            <p class="mb-6 lg:mb-0 text-center">Potrzebujesz czegoś extra? Zaprojektujemy dla Ciebie specjalne rozwiązanie.</p>
+            <a href="#" class="px-4 py-2 rounded-sm shadow-sm font-medium text-white bg-purple-900 hover:bg-gray-900">Skontaktuj się z nami</a>
+        </div>
+    </div>
+</section>
+
+<!-- faq section -->
+<section class="mt-10 md:mt-16 lg:mt-20 overflow-x-hidden md:overflow-x-visible">
+    <div class="container">
+        <h2 class="text-center text-2xl md:text-4xl font-bold">
+            Często zadawane pytania
+        </h2>
+        <div class="flex flex-wrap items-center justify-center border-b border-gray-300 pb-12 lg:pb-20">
+<div class="w-full lg:w-5/12 px-2 mx-auto" data-aos="fade-right">
+            <div class="mt-6 lg:mt-12">
+       
+                <h4 class="text-xl mb-4 font-bold">
+                    Jak działa darmowy okres próbny?
+                </h4>
+                <p class="text-base">
+                    Curabitur auctor, leo ut commodo rutrum, ex turpis rutrum magna, sed euismod leo nulla consectetur libero. Mauris id sollicitudin eros. Proin tincidunt odio vitae.
+                </p>
+           
+            </div>
+            <div class="mt-6 lg:mt-12">
+                
+                    <h4 class="text-xl mb-4 font-bold">
+                        Jak działa darmowy okres próbny?
+                    </h4>
+                    <p class="text-base">
+                        Curabitur auctor, leo ut commodo rutrum, ex turpis rutrum magna, sed euismod leo nulla consectetur libero. Mauris id sollicitudin eros. Proin tincidunt odio vitae.
+                    </p>
+                
+                </div>
+                <div class="mt-6 lg:mt-12">
+                    
+                        <h4 class="text-xl mb-4 font-bold">
+                            Jak działa darmowy okres próbny?
+                        </h4>
+                        <p class="text-base">
+                            Curabitur auctor, leo ut commodo rutrum, ex turpis rutrum magna, sed euismod leo nulla consectetur libero. Mauris id sollicitudin eros. Proin tincidunt odio vitae.
+                        </p>
+                    
+                    </div>
+                    </div>
+
+                    <div class="w-full lg:w-5/12 px-2 mx-auto" data-aos="fade-left">
+            <div class="mt-6 lg:mt-12">
+       
+                <h4 class="text-xl mb-4 font-bold">
+                    Jak działa darmowy okres próbny?
+                </h4>
+                <p class="text-base">
+                    Curabitur auctor, leo ut commodo rutrum, ex turpis rutrum magna, sed euismod leo nulla consectetur libero. Mauris id sollicitudin eros. Proin tincidunt odio vitae.
+                </p>
+           
+            </div>
+            <div class="mt-6 lg:mt-12">
+                
+                    <h4 class="text-xl mb-4 font-bold">
+                        Jak działa darmowy okres próbny?
+                    </h4>
+                    <p class="text-base">
+                        Curabitur auctor, leo ut commodo rutrum, ex turpis rutrum magna, sed euismod leo nulla consectetur libero. Mauris id sollicitudin eros. Proin tincidunt odio vitae.
+                    </p>
+                
+                </div>
+                <div class="mt-6 lg:mt-12">
+                    
+                        <h4 class="text-xl mb-4 font-bold">
+                            Jak działa darmowy okres próbny?
+                        </h4>
+                        <p class="text-base">
+                            Curabitur auctor, leo ut commodo rutrum, ex turpis rutrum magna, sed euismod leo nulla consectetur libero. Mauris id sollicitudin eros. Proin tincidunt odio vitae.
+                        </p>
+                    
+                    </div>
+                    </div>
+        </div>
+        
+    </div>
+</section>
+
+<!-- section opinie -->
+<section class="mt-10 md:mt-16 lg:mt-20 overflow-x-hidden md:overflow-x-visible">
+    <div class="container">
+        <div class="flex flex-col items-center text-center">
+            <h2 class="text-2xl md:text-4xl font-bold">
+                Opinie naszych klientów
+            </h2>
+            <p class="w-full md:w-7/12 mt-3 sm:mt-5 sm:text-lg md:text-xl pb-8 md:pb-12 lg:pb-16">
+               Curabitur auctor, leo ut commodo rutrum, ex turpis rutrum magna, sed euismod leo nulla consectetur libero. Mauris id sollicitudin eros. Proin tincidunt odio vitae.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-10 gap-y-10 xl:gap-y-0 px-0 md:px-12 2xl:px-20 border-b border-gray-300 pb-12 lg:pb-20">
+            <div class="flex flex-col border border-purple-200 bg-purple-50 px-4 md:px-8 py-6 md:py-10" data-aos="fade-right">
+                <div class="relative">
+                    <img src="assets/avatar6.png" alt="avatar">
+                    <img src="assets/icons/quote.svg" alt="quote" class="absolute top-0 left-12">
+                </div>
+
+                <p class="text-base py-6 border-b border-gray-300">
+               Curabitur auctor, leo ut commodo rutrum, ex turpis rutrum magna, sed euismod leo nulla consectetur libero. Mauris id sollicitudin eros. Proin tincidunt odio vitae.
+                </p>
+                <span class="text-base mt-6">Kordian Kamiński - <span class="text-purple-900 font-bold">CCC Shoes & Bags</span></span>
+            </div>
+             <div class="flex flex-col border border-purple-200 bg-purple-50 px-4 md:px-8 py-6 md:py-10" data-aos="flip-up">
+                <div class="relative">
+                    <img src="assets/avatar5.png" alt="avatar">
+                    <img src="assets/icons/quote.svg" alt="quote" class="absolute top-0 left-12">
+                </div>
+
+                <p class="text-base py-6 border-b border-gray-300">
+               Curabitur auctor, leo ut commodo rutrum, ex turpis rutrum magna, sed euismod leo nulla consectetur libero. Mauris id sollicitudin eros. Proin tincidunt odio vitae.
+                </p>
+                <span class="text-base mt-6">Sara Kopacz - <span class="text-purple-900 font-bold">Natural</span></span>
+            </div>
+             <div class="flex flex-col border border-purple-200 bg-purple-50 px-4 md:px-8 py-6 md:py-10" data-aos="fade-left">
+                <div class="relative">
+                    <img src="assets/avatar4.png" alt="avatar">
+                    <img src="assets/icons/quote.svg" alt="quote" class="absolute top-0 left-12">
+                </div>
+
+                <p class="text-base py-6 border-b border-gray-300">
+               Curabitur auctor, leo ut commodo rutrum, ex turpis rutrum magna, sed euismod leo nulla consectetur libero. Mauris id sollicitudin eros. Proin tincidunt odio vitae.
+                </p>
+                <span class="text-base mt-6">Lidia Murańczyk- <span class="text-purple-900 font-bold">Avon</span></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- section texts -->
+<section class="mt-10 md:mt-16 lg:mt-20">
+    <div class="container">
+        <div class="flex flex-col items-center text-center">
+            <h2 class="text-2xl font-bold md:text-4xl">
+                Przetestuj SOCIDO za darmo
+            </h2>
+            <p class="w-full md:w-7/12 mt-3 sm:mt-5 sm:text-lg md:text-xl pb-6 md:pb-8 lg:pb-12">
+                               Curabitur auctor, leo ut commodo rutrum, ex turpis rutrum magna, sed euismod leo nulla consectetur libero. Mauris id sollicitudin eros. Proin tincidunt odio vitae.
+            </p>
+            <a href="index.html" class="px-4 py-2 rounded shadow-sm font-medium text-white bg-purple-900 hover:bg-gray-300">
+                Rozpocznij za darmo
+            </a>
+
+            <div class="flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-y-0 lg:space-x-8 mt-6 md:mt-8 lg:mt-12">
+                <div class="flex">
+                    <img src="assets/icons/checkmark.svg">
+                    <span class="ml-3 text-base break-words">
+                        Bezpłatna 14-dniowa wersja próbna
+                    </span>
+                </div>
+                <div class="flex">
+                    <img src="assets/icons/checkmark.svg">
+                    <span class="ml-3 text-base break-words">
+                        Nieograniczona liczba uzytkowników
+                    </span>
+                </div>
+                <div class="flex">
+                    <img src="assets/icons/checkmark.svg">
+                    <span class="ml-3 text-base break-words">
+                        Rabaty liczbowe
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- footer -->
+    <footer class="mt-8 md:mt-12 lg:mt-20">
+        <div class="container">
+            <div class="flex flex-wrap justify-between border-t border-gray-300 py-12 lg:py-20">
+                <div class="w-full lg:w-4/12 px-4">
+                    <img src="assets/logo2.svg" />
+                    <p class="text-base mt-4">Quisque pulvinar magna nec nulla sagittis, id pellentesque magna pharetra. Quisque pulvinar magna nec nulla sagittis, id pellentesque magna pharetra.</p>
+                </div>
+
+                <div class="w-full lg:w-8/12 xl:w-7/12 px-4">
+                    <div class="flex flex-wrap justify-between xl:justify-end mb-6">
+                        <div class="w-full md:w-4/12 xl:w-3/12 px-0 lg:px-4 lg:pt-0">
+                            <span class="block font-bold mb-3">
+                                Funkcje
+                            </span>
+                            <ul class="list-none">
+                                <li>
+                                    <a href="#" class="text-purple-900 hover:text-gray-900 pb-3 block">Analityka</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-purple-900 hover:text-gray-900 pb-3 block">Social Media Inbox</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-purple-900 hover:text-gray-900 pb-3 block">Automatyka</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-purple-900 hover:text-gray-900 pb-3 block">Raportowanie</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-purple-900 hover:text-gray-900 pb-3 block">Publikacja</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="w-full md:w-4/12 xl:w-3/12 px-0 lg:px-4 lg:pt-0">
+                            <span class="block font-bold mb-3">
+                                Dla Twojej firmy
+                            </span>
+                            <ul class="list-none">
+                                <li>
+                                    <a href="#" class="text-purple-900 hover:text-gray-900 pb-3 block">Małe i średnie firmy</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-purple-900 hover:text-gray-900 pb-3 block">eCommerce</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-purple-900 hover:text-gray-900 pb-3 block">Agencja</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-purple-900 hover:text-gray-900 pb-3 block">Enterprise</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-purple-900 hover:text-gray-900 pb-3 block">Influencerzy</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="w-full md:w-4/12 xl:w-3/12 px-0 lg:px-4 lg:pt-0">
+                            <span class="block font-bold mb-3">
+                                Baza wiedzy
+                            </span>
+                            <ul class="list-none">
+                                <li>
+                                    <a href="#" class="text-purple-900 hover:text-gray-900 pb-3 block">Blog</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-purple-900 hover:text-gray-900 pb-3 block">Centrum pomocy</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-purple-900 hover:text-gray-900 pb-3 block">Statystyki</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-purple-900 hover:text-gray-900 pb-3 block">Regulamin</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-purple-900 hover:text-gray-900 pb-3 block">Polityka prywatności</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-8 lg:mb-16 flex flex-wrap items-center justify-between">
+                <span class="order-2 sm:order-1 mt-3 sm:mt-0">2020 SOCIDO. All right reserved.</span>
+                <div class="flex items-center space-x-2 order-1 sm:order-2">
+                    <a href="#" class="bg-purple-900 rounded-full w-6 h-6 text-white text-center">
+                        <i class="fab fa-instagram text-sm"></i>
+                    </a>
+
+                    <a href="#" class="bg-purple-900 rounded-full w-6 h-6 text-white text-center">
+                        <i class="fab fa-twitter text-sm"></i>
+                    </a>
+
+                    <a href="#" class="bg-purple-900 rounded-full w-6 h-6 text-white text-center">
+                        <i class="fab fa-linkedin-in text-sm"></i>
+                    </a>
+
+                    <a href="#" class="bg-purple-900 rounded-full w-6 h-6 text-white text-center">
+                        <i class="fab fa-facebook-f text-sm"></i>
+                    </a>
+
+                    <a href="#" class="bg-purple-900 rounded-full w-6 h-6 text-white text-center">
+                        <i class="fab fa-pinterest-p text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        AOS.init({
+            delay: 200,
+            duration: 1200,
+            once: true
+        })
+    </script>
+   <script src="script.js"></script>
+</body>
+</html>
